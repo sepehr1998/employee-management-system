@@ -1,4 +1,5 @@
 using EmployeeManagement.Data;
+using EmployeeManagement.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.InMemory;
 
@@ -15,6 +16,11 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseInMemoryDatabase("EmployeeDb")
     );
+
+// Add the employee repository to the dependency injection
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
