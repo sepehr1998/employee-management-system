@@ -39,4 +39,23 @@ public class EmployeeController : ControllerBase
         await _employeeRepository.AddEmployeeAsync(employee);
         return CreatedAtAction(nameof(GetEmployeeById), new {id = employee.Id}, employee);
     }
+    
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteEmployeeById(int id)
+    {
+        await _employeeRepository.DeleteEmployeeAsync(id);
+        return NoContent();
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult<Employee>> UpdateEmployeeAsync(int id, Employee employee)
+    {
+        if (id != employee.Id)
+        {
+            return BadRequest();
+        }
+
+        await _employeeRepository.UpdateEmployeeAsync(employee);
+        return CreatedAtAction(nameof(GetEmployeeById), new {id = employee.Id}, employee);
+    }
 }
