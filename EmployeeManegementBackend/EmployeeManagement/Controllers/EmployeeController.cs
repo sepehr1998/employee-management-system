@@ -14,6 +14,24 @@ public class EmployeeController : ControllerBase
     {
         _employeeRepository = employeeRepository;
     }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Employee>>> GetAllEmployeesAsync()
+    {
+        return Ok(await _employeeRepository.GetAllAsync());
+    }
+    
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Employee>> GetEmployeeById(int id)
+    {
+        var employee = await _employeeRepository.GetByIdAsync(id);
+        if (employee == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(employee);
+    }
     
     [HttpPost]
     public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
