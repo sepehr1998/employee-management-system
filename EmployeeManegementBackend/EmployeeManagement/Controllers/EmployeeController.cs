@@ -37,6 +37,6 @@ public class EmployeeController : ControllerBase
     public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
     {
         await _employeeRepository.AddEmployeeAsync(employee);
-        return Created();
+        return CreatedAtAction(nameof(GetEmployeeById), new {id = employee.Id}, employee);
     }
 }
