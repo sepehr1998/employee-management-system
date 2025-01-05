@@ -133,3 +133,64 @@ $RECYCLE.BIN/
 _NCrunch*
 
 .idea/
+
+employee-management-client/.DS_STORE
+
+employee-management-client/dist/
+employee-management-client/bazel-out
+employee-management-client/integration/bazel/bazel-*
+employee-management-client/*.log
+employee-management-client/node_modules/
+employee-management-client/modules/ssr-benchmarks/node_modules/
+
+# Include when developing application packages.
+employee-management-client/pubspec.lock
+employee-management-client/.c9
+employee-management-client/.idea/
+employee-management-client/.devcontainer/*
+!employee-management-client/.devcontainer/README.md
+!employee-management-client/.devcontainer/recommended-devcontainer.json
+!employee-management-client/.devcontainer/recommended-Dockerfile
+employee-management-client/.settings/
+employee-management-client/.vscode/launch.json
+employee-management-client/.vscode/settings.json
+employee-management-client/.vscode/tasks.json
+employee-management-client/*.swo
+employee-management-client/*.swp
+employee-management-client/modules/.settings
+employee-management-client/modules/.vscode
+employee-management-client/.vimrc
+employee-management-client/.nvimrc
+
+# Don't check in secret files
+employee-management-client/*secret.js
+
+# Ignore npm/yarn debug log
+employee-management-client/npm-debug.log
+employee-management-client/yarn-error.log
+
+# build-analytics
+employee-management-client/.build-analytics
+
+# rollup-test output
+employee-management-client/modules/rollup-test/dist/
+
+# User specific bazel settings
+employee-management-client/.bazelrc.user
+
+# User specific ng-dev settings
+employee-management-client/.ng-dev.user*
+
+employee-management-client/.notes.md
+employee-management-client/baseline.json
+
+# Ignore .history for the xyz.local-history VSCode extension
+employee-management-client/.history
+
+# Husky
+employee-management-client/.husky/_
+
+# Ignore cache created with the Angular CLI.
+employee-management-client/.angular/
+
+employee-management-client/.vscode/
