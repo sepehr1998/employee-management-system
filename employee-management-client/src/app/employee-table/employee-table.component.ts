@@ -19,4 +19,15 @@ export class EmployeeTableComponent {
       this.employees = data;
     })
   }
+
+  deleteEmployee(id: number) {
+    this.employeeService.deleteEmployee(id).subscribe({
+      next: () => {
+        this.employees = this.employees.filter(employee => employee.id !== id);
+      },
+      error: (err) => {
+        console.error('Error deleting employee', err);
+      }
+    })
+  }
 }
